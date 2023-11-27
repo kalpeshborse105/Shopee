@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Invoice</title>
+    <style>
+        /* Add your invoice styling here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .total {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <center>Invoice</center>
+    </h1>
+    <hr />
+    <table align="left">
+        <tr>
+            <th>Customer Name:</th>
+            <td>{{ order.userid.customer.fn }} {{ order.userid.customer.ln }}</td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td>{{ order.userid.email }}</td>
+        </tr>
+        <tr>
+            <th>City:</th>
+            <td>{{ order.userid.customer.city }}</td>
+        </tr>
+        <tr>
+            <th>Pincode:</th>
+            <td>{{ order.userid.customer.pincode }}</td>
+        </tr>
+        <tr>
+            <th>Mobile:</th>
+            <td>{{ order.userid.customer.mobno }}</td>
+        </tr>
+        <tr>
+            <th>Order Id:</th>
+            <td>{{ order.orderid }}</td>
+        </tr>
+    </table>
+    <br />
+    <hr />
+    <br />
+    <h1>Order Details</h1>
+    <table>
+        <tr align="center">
+            <th>Brand</th>
+            <th>Order Date</th>
+            <th>Quantity</th>
+            <th>Price Per Quantity</th>
+            <th>Download Invoice</th>
+        </tr>
+        <tr align="center">
+            <td>{{ order.pid.bname }}</td>
+            <td>{{ order.date }}</td>
+            <td>{{ order.qty }}</td>
+            <td>{{ order.amt }}</td>
+            <td><a href="/invoice/download/{{ order.orderid }}/">{{ order.orderid }}</a></td>
+        </tr>
+        <tr>
+            <td class="total" colspan="4">Total Bill: Rs. {{ tamount }}</td>
+        </tr>
+    </table>
+    <br>
+    <hr>
+    Thanks for Shopping...!
+    <a href="http://127.0.0.1:8000/index">Click here</a> to continue Shopees...
+    <p><b>made by kalpesh borse</b></p>
+</body>
+
+</html>

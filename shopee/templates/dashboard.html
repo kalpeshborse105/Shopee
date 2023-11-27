@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            {% if success %}
+            <div class="alert alert-success" role="alert">
+                {{success}}
+            </div>
+            {% endif %}
+            <table class="table mt-5" border="2">
+                <tr>
+                    <th>welcome, <br>
+                        <h2>{{ user_data.customer.fn }} {{ user_data.customer.ln }}</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <th><a href="/orderhistory">Orderhistory</a></th>
+                </tr>
+                <tr>
+                    <th><a href="/register">New Register</a></th>
+                </tr>
+                <tr>
+                    <th><a href="/update/">Edit Profile</a></th>
+                </tr>
+                <tr>
+                    <th><a href="/contact">Contact us</a></th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-8 mt-5">
+            <table class="table table-striped border-top">
+                <tr>
+                    <th>Email:</th>
+                    <td>{{ user_data.email }}</td>
+                </tr>
+                <tr>
+                    <th>First Name:</th>
+                    <td>{{ user_data.customer.fn }}</td>
+                </tr>
+                <tr>
+                    <th>Last Name:</th>
+                    <td>{{ user_data.customer.ln }}</td>
+                </tr>
+                <tr>
+                    <th>City:</th>
+                    <td>{{ user_data.customer.city }}</td>
+                </tr>
+                <tr>
+                    <th>Pincode:</th>
+                    <td>{{ user_data.customer.pincode }}</td>
+                </tr>
+                <tr>
+                    <th>Mobile:</th>
+                    <td>{{ user_data.customer.mobno }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% endblock 'main' %}

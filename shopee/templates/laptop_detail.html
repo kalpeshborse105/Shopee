@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row">
+    <div class="col-md-12 mt-6 mb-5">
+        {% for x in data %}
+        <div class="row">
+            <div class="col-md-5"><br>
+                {% if success %}
+                <div class="alert alert-success">{{success}}
+                </div>
+                {% endif %}
+                {% if msg %}
+                <div class="alert alert-danger">{{msg}}
+                </div>
+                {% endif %}
+                <img src="{{x.pimage.url}}" width="100%" alt="...">
+            </div>
+            <div class="col-md-7 mt-5 mb-5 table-responsive mx-auto">
+                <table class="table table-bordered custom-table">
+                    <tr>
+                       <th colspan="2"><h1>Specifications</h1></th>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td><b>Rs.{{x.oprice}} </b>
+                            <del>MRP : Rs.{{x.price}}</del></td>
+                    <tr>
+                        <td>Brand</td>
+                        <td><b>{{x.bname}}</b></td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Screen Size
+                        </td>
+                        <td><b>{{x.ss}} Inches</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hard Disk Size
+                        </td>
+                        <td><b>{{x.hds}} GB</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ram Memory Size
+                        </td>
+                        <td><b>{{x.rms}} GB</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Operating System
+                        </td>
+                        <td><b>{{x.os}}</b></td>
+                    </tr>
+                </table>
+
+                <a href="/addcart/{{x.id}}"><button class="btn btn-primary"><b>ADD CART</b></button></a>
+                <a href="/viewcart"><button class="btn btn-danger"><b>BUY NOW</b></button></a>
+                <a href="/index"><button class="btn btn-warning">Shop More</button></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock 'main' %}

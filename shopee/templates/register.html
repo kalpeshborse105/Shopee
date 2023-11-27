@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="container">
+    <br>
+    <p class="text-center">
+        <a href="http://127.0.0.1:8000/index">
+            <img src="{% static 'images/logo1.jpg' %}" width="20%" height="100%" class="d-inline-block align-top"
+                alt="" /></a><br>
+        LaptopStore | Register <br><a href="http://127.0.0.1:8000/index">LaptopStore-services.com</a>
+    </p>
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <header class="card-header">
+                    <h4><a href="/login" class="float-right btn btn-outline-primary mt-1">Login</a>
+                        <a href="/register" class="float-right btn btn-outline-primary mt-1">Register</a>
+                    </h4>
+                </header>
+                <article class="card-body">
+                    {% if errmsg %}
+                    <div class="alert alert-danger" role="alert">
+                        {{errmsg}}
+                    </div>
+                    {% endif %}
+                    <form method="POST" action="/register">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="Input1" class="form-label"><strong>Email Address :</strong></label>
+                            <input type="email" class="form-control" name="uname" id="Input1"
+                                placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="Input2" class="form-label"><strong>Password:</strong></label>
+                            <input type="password" class="form-control" name="upwrd" id="Input2"
+                                placeholder="enter Password">
+                        </div>
+                        <!-- <div>
+                                <label for="Input3" class="form-label"><strong>Confirm Password:</strong></label>
+                                <input type="password" class="form-control" name="ucpwrd" id="Input3"
+                                    placeholder="enter Confirm Password">
+                            </div> -->
+                        <div class="mb-3">
+                            <label><b> First Name : </b></label>
+                            <input type="text" class="form-control" name="fn" placeholder="Enter Your First Name">
+                        </div>
+                        <div class="mb-3">
+                            <label><b>Last Name:</b></label>
+                            <input type="text" class="form-control" name="ln" placeholder="Enter Your Last Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="Input1" class="form-label"><strong>Mobile Number : </strong></label>
+                            <input type="number" class="form-control" name="mobile" id="Input1"
+                                placeholder="name@example.com">
+                        </div>
+                        <div class="form-row">
+                            <div class="mb-3">
+                                <label><b>City</b></label>
+                                <select id="inputState" class="form-control" name="city">
+                                    <option value="">Choose...</option>
+                                    <option value="akola">Akola</option>
+                                    <option value="amravati">Amravati</option>
+                                    <option value="aurangabad">Aurangabad</option>
+                                    <option value="bhandara">Bhandara</option>
+                                    <option value="buldhana">Buldhana</option>
+                                    <option value="chandrapur">Chandrapur</option>
+                                    <option value="dhule">Dhule</option>
+                                    <option value="gadchiroli">Gadchiroli</option>
+                                    <option value="gondia">Gondia</option>
+                                    <option value="hingoli">Hingoli</option>
+                                    <option value="jalgaon">Jalgaon</option>
+                                    <option value="jalna">Jalna</option>
+                                    <option value="nagpur">Nagpur</option>
+                                    <option value="nanded">Nanded</option>
+                                    <option value="nashik">Nashik</option>
+                                    <option value="osmanabad">Osmanabad</option>
+                                    <option value="parbhani">Parbhani</option>
+                                    <option value="pune">Pune</option>
+
+                                    <option value="ratnagiri">Ratnagiri</option>
+                                    <option value="sangli">Sangli</option>
+                                    <option value="satara">Satara</option>
+                                    <option value="sindhudurg">Sindhudurg</option>
+                                    <option value="solapur">Solapur</option>
+                                    <option value="thane">Thane</option>
+                                    <option value="wardha">Wardha</option>
+                                    <option value="washim">Washim</option>
+                                    <option value="palghar">Palghar</option>
+                                    <option value="ahmednagar">Ahmednagar</option>
+                                    <option value="latur">Latur</option>
+                                    <option value="yavatmal">Yavatmal</option>
+                                    <option value="nandurbazar">Nandurbar</option>
+                                    <option value="mumbai">Mumbai</option>
+                                    <option value="mumbai suburban">Mumbai Suburban</option>
+                                </select>
+                            </div>
+                            <div class="mb-3"><b>
+                                    Pincode : </b></label>
+                                <input type="number" class="form-control" name="pin" id="Input3"
+                                    placeholder="Enter Area Pincode">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                                <label class="form-check-label" for="gridCheck">
+                                    I Accept Term's & Conditions
+                                </label>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <input type="submit" class="btn btn-primary" value="Register">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="border-top card-body text-center">Have an account? <a href="/login">Login</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock 'main' %}

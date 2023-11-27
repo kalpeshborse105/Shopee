@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row mt-3">
+  <div class="col-md-12 clearfix mt-4 text-center">
+    <h2>About Us</h2>
+    <hr />
+  </div>
+  <div class="col-md-6">
+    <img src="{% static 'images/about.jpg' %}" width="100%" height="100%" class="d-inline-block align-top"
+      alt="Shopee logo" />
+  </div>
+  <div class="col-md-6">
+    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda,
+    perspiciatis obcaecati omnis dolorem, unde adipisci facilis voluptate
+    fuga, ducimus asperiores debitis. Sit excepturi dolor corrupti ut repellat
+    ratione nulla iure eligendi nobis magnam veritatis fugit distinctio expedita doloremque, omnis minus provident cumque. Necessitatibus aliquam
+    voluptates laudantium est assumenda ullam Lorem ipsum dolor sit amet.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 mt-3 text-center">
+    <h2>Vision</h2>
+    <hr />
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda,
+      perspiciatis obcaecati omnis dolorem, unde adipisci facilis voluptate
+      fuga, ducimus asperiores debitis. Sit excepturi dolor corrupti ut repellat
+      ratione nulla iure eligendi nobis magnam veritatis fugit distinctio
+      expedita doloremque, omnis minus provident cumque. Necessitatibus aliquam
+      voluptates laudantium est assumenda ullam.
+    </p>
+  </div>
+  <div class="col-md-6 mt-3 text-center">
+    <h2>Mission</h2>
+    <hr />
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda,
+      perspiciatis obcaecati omnis dolorem, unde adipisci facilis voluptate
+      fuga, ducimus asperiores debitis. Sit excepturi dolor corrupti ut repellat
+      ratione nulla iure eligendi nobis magnam veritatis fugit distinctio
+      expedita doloremque, omnis minus provident cumque. Necessitatibus aliquam
+      voluptates laudantium est assumenda ullam.
+    </p>
+  </div>
+</div>
+<!-- statistic -->
+<div class="row mb-2">
+  <h2 class="mt-3 text-center">Statistic</h2>
+  <hr />
+  <div class="col-md-3 mx-auto mt-1 bg-info-subtle mb-2 shadow p-3">
+    <h2 class="text-danger text-center">40000+</h2>
+    <h6 class="text-center">Happy Customer....</h6>
+  </div>
+  <div class="col-md-3 me-auto mt-1 bg-danger-subtle mb-2 shadow p-3">
+    <h2 class="text-danger text-center">500000+</h2>
+    <h6 class="text-center">Ordered Delivered....</h6>
+  </div>
+  <div class="col-md-3 me-auto mt-1 bg-success-subtle mb-2 shadow p-3">
+    <h2 class="text-danger text-center">800+</h2>
+    <h6 class="text-center">Products....</h6>
+  </div>
+</div>
+{% endblock 'main' %}

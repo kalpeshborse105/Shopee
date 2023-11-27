@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+<div class="row">
+    <div class="col-md-12 mt-3">
+        <h2 class="mt-3 mb-2"><center>Contact Us</center></h2>
+        <hr>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.205622541252!2d73.8384584749115!3d18.519607882573787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf3ec1207915%3A0xb73335cd0d52335c!2sItvedant%20Pvt%20Ltd%20Pune!5e0!3m2!1sen!2sin!4v1686646066724!5m2!1sen!2sin"
+            width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- Google map -->
+    <div class="col-md-6 mt-5 mb-3">
+        <h3><i class="bi bi-building-fill-add text-primary"></i> Head Office</h3>
+        <hr />
+        104,E-Wing,Laxminarayan Tower,<br>
+        Near Nilayam theater,<br>
+        Sadashiv Peth,<br>
+        Pune-411030,<br>
+        Maharashtra<br>
+        <i class="bi bi-telephone-fill text-primary"></i>&nbsp;contact : 7058174130 / 7020210543<br />
+        <i class="bi bi-envelope text-primary"></i>&nbsp; kalpeshborse105@gmail.com
+    </div>
+    <!--  address mobile and mail -->
+    <div class="col-md-6 mt-5 mb-3">
+        <h4><i class="bi bi-question-circle-fill text-primary"></i> Feedback Form</h4>
+        <hr />
+        <form method="POST" action="" class="form-control">
+            <div class="mb-2">
+                <label for="Input1" class="form-label"><strong>Full name:</strong></label>
+                <input type="text" class="form-control" name="name" id="Input1" placeholder="enter name" />
+            </div>
+            <div class="mb-2">
+                <label for="Input1" class="form-label"><strong>mobile no:</strong></label>
+                <input type="number" class="form-control" name="mobile" id="Input1" placeholder="enter mobile number" />
+            </div>
+            <div class="mb-2 ">
+                <label for="Input3" class="form-label"><strong>Message:</strong></label><br />
+                <textarea name="msg" class="form-control" cols="35" rows="5"
+                    placeholder="Enter Your Message"></textarea>
+            </div>
+            <div class="mb-2 mt-3">
+                <input type="submit" class="btn btn-primary" value="Submit" />
+            </div>
+        </form>
+    </div>
+    <!--Contact form -->
+</div>
+{% endblock 'main' %}

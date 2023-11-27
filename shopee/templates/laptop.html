@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="col-md-12 mt-4 bg-light text-black p-3">
+    <div class="row">
+        {% for x in data %}
+        <div class="col-md-4 mt-2">
+            <div class="card shadow" style="height:100%; object-fit: cover;">
+                <img src="{{x.pimage.url}}" class="img-fluid" alt="Product Image">
+                <div class="card-body mt-3">
+                    <h5 class="card-title"><b>{{x.bname}}</b></h5>
+                    <h6 class="card-title"><b>{{x.mname}}</b></h6>
+                    <p><span class="badge bg-warning text-black mb-1">-{{x.offer}} Off</span>
+                    <p class="card-text mb-1"><strong>Rs : {{x.oprice}}</strong>
+                    </p>
+                    <p class="card-text mb-1"><strong>RS :
+                            <del class="text-secondary">{{x.price}}</del></strong>
+                    </p>
+                    </p>
+                    <a href="/laptop_detail/{{x.id}}" class="btn btn-primary mt-3">See Detail</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock 'main' %}

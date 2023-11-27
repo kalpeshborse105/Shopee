@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row">
+    <section class="orders">
+        <h2>Orders History</h2>
+        <table class="colspan-2">
+            <thead>
+                <tr>
+                    <th>Brand Name</th>
+                    <th>Order ID</th>
+                    <th>Model Name</th>
+                    <th>Price Per Item</th>
+                    <th>Quantity</th>
+                    <th>Purchase Date</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in order_history %}
+                <tr>
+                    <td>{{ order.bname }}</td>
+                    <td>{{ order.orderid }}</td>
+                    <td>{{ order.mname }}</td>
+                    <td>{{ order.oprice }}</td>
+                    <td>{{ order.qty }}</td>
+                    <td>{{ order.date }}</td>
+                    <td>Total : {{ order.amt }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+
+{% endblock 'main' %}

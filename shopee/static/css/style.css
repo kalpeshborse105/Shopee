@@ -1,0 +1,17 @@
+.anchor{
+    text-decoration: none;
+}
+.social{
+    display:inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+}
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+}
+table.custom-table th,
+  table.custom-table td {
+    border: none;
+  }

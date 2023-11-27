@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row">
+    <div class="col-md-9 mt-5 bg-light text-black p-3">
+        <div class="row">
+            {% for x in data %}
+            <div class="col-md-3 mb-3">
+                <a href="/laptop_detail/{{x.id}}">
+                    <div class="card shadow" style="height:100%; object-fit: cover;">
+                        <img src="{{x.pimage.url}}" class="img-fluid" alt="Product Image">
+                        <div class="card-body mt-1">
+                            <h7 class="card-title ">{{x.bname}} {{x.mname}} {{x.bname}} ({{x.rms}} RAM / {{x.hds}} SSD) / {{x.ss}}</h7>
+                            <p class="card-text mb-1">
+                                <span class="badge bg-warning text-black mb-1">-{{x.offer}} Off</span>
+                            </p>
+                            <p class="card-text mb-1"><strong>Rs : {{x.oprice}}</strong>
+                            </p>
+                            <p class="card-text mb-1"><strong>RS :
+                                    <del class="text-secondary">{{x.price}}</del></strong>
+                            </p>
+                                
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-3 mt-5 bg-light text-black p-3">
+        <h5>Filter by Category</h5>
+        <hr />
+        <p><a href="/index" class="anchor">All</a></p>
+        <p><a href="/catfilter/1" class="anchor">By Acer</a></p>
+        <p><a href="/catfilter/2" class="anchor">By Asus</a></p>
+        <p><a href="/catfilter/3" class="anchor">By Dell</a></p>
+        <p><a href="/catfilter/4" class="anchor">By HP</a></p>
+        <p><a href="/catfilter/5" class="anchor">By Lenovo</a></p>
+
+        <h5>Filter by Price</h5>
+        <hr />
+        <form method="GET" action="/pricefilter">
+            <div class="mb-2">
+                <label for="Input1" class="form-label"><strong>MIN:</strong></label>
+                <input type="number" class="form-control" name="min" id="Input1" placeholder="enter minimum value " />
+            </div>
+
+            <div class="mb-2">
+                <label for="Input1" class="form-label"><strong>MAX:</strong></label>
+                <input type="number" class="form-control" name="max" id="Input2" placeholder="enter maximum value" />
+            </div>
+            <div class="mb-2">
+                <input type="submit" class="btn btn-primary" value="Search" />
+            </div>
+        </form>
+        <h5 class="mt-3">Sort by Price</h5>
+        <hr />
+        <p><a href="/sort/1" class="anchor">high to low</a></p>
+        <p><a href="/sort/0" class="anchor">low to high</a></p>
+    </div>
+</div>
+{% endblock 'main' %}
